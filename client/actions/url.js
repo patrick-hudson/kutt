@@ -25,7 +25,7 @@ export const showShortenerLoading = () => ({ type: SHORTENER_LOADING });
 
 export const createShortUrl = params => async dispatch => {
   try {
-    const { data } = await axios.post('/api/url/submit', params, {
+    const { data } = await axios.post('/u/api/url/submit', params, {
       headers: { Authorization: cookie.get('token') },
     });
     dispatch(addUrl(data));
@@ -49,7 +49,7 @@ export const getUrlsList = params => async (dispatch, getState) => {
   );
 
   try {
-    const { data } = await axios.get(`/api/url/geturls${query}`, {
+    const { data } = await axios.get(`/u/api/url/geturls${query}`, {
       headers: { Authorization: cookie.get('token') },
     });
     dispatch(listUrls(data));
@@ -61,7 +61,7 @@ export const getUrlsList = params => async (dispatch, getState) => {
 export const deleteShortUrl = params => async dispatch => {
   dispatch(showTableLoading());
   try {
-    await axios.post('/api/url/deleteurl', params, {
+    await axios.post('/u/api/url/deleteurl', params, {
       headers: { Authorization: cookie.get('token') },
     });
     dispatch(deleteUrl(params.id));

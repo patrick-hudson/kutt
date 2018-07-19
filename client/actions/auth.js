@@ -33,7 +33,7 @@ export const authRenew = () => ({ type: AUTH_RENEW });
 export const signupUser = payload => async dispatch => {
   dispatch(showSignupLoading());
   try {
-    const { data: { email } } = await axios.post('/api/auth/signup', payload);
+    const { data: { email } } = await axios.post('/u/api/auth/signup', payload);
     dispatch(sentVerification(email));
   } catch ({ response }) {
     dispatch(showAuthError(response.data.error));
@@ -43,13 +43,13 @@ export const signupUser = payload => async dispatch => {
 export const loginUser = payload => async dispatch => {
   dispatch(showLoginLoading());
   try {
-    const { data: { token } } = await axios.post('/api/auth/login', payload);
+    const { data: { token } } = await axios.post('/u/api/auth/login', payload);
     cookie.set('token', token, { expires: 7 });
     dispatch(authRenew());
     dispatch(authUser(decodeJwt(token).sub));
     dispatch(setDomain(decodeJwt(token).domain));
     dispatch(showPageLoading());
-    Router.push('/');
+    Router.push('/u/');
   } catch ({ response }) {
     dispatch(showAuthError(response.data.error));
   }
@@ -70,7 +70,7 @@ export const renewAuthUser = () => async (dispatch, getState) => {
   const options = {
     method: 'POST',
     headers: { Authorization: cookie.get('token') },
-    url: '/api/auth/renew',
+    url: '/u/api/auth/renew',
   };
 
   try {

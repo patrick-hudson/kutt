@@ -21,7 +21,7 @@ export const showDomainInput = () => ({ type: SHOW_DOMAIN_INPUT });
 
 export const getUserSettings = () => async dispatch => {
   try {
-    const { data } = await axios.get('/api/auth/usersettings', {
+    const { data } = await axios.get('/u/api/auth/usersettings', {
       headers: { Authorization: cookie.get('token') },
     });
     dispatch(setDomain(data.customDomain));
@@ -34,7 +34,7 @@ export const getUserSettings = () => async dispatch => {
 export const setCustomDomain = params => async dispatch => {
   dispatch(showDomainLoading());
   try {
-    const { data } = await axios.post('/api/url/customdomain', params, {
+    const { data } = await axios.post('/u/api/url/customdomain', params, {
       headers: { Authorization: cookie.get('token') },
     });
     dispatch(setDomain(data.customDomain));
@@ -45,7 +45,7 @@ export const setCustomDomain = params => async dispatch => {
 
 export const deleteCustomDomain = () => async dispatch => {
   try {
-    await axios.delete('/api/url/customdomain', {
+    await axios.delete('/u/api/url/customdomain', {
       headers: { Authorization: cookie.get('token') },
     });
     dispatch(deleteDomain());
@@ -57,7 +57,7 @@ export const deleteCustomDomain = () => async dispatch => {
 export const generateApiKey = () => async dispatch => {
   dispatch(showApiLoading());
   try {
-    const { data } = await axios.post('/api/auth/generateapikey', null, {
+    const { data } = await axios.post('/u/api/auth/generateapikey', null, {
       headers: { Authorization: cookie.get('token') },
     });
     dispatch(setApiKey(data.apikey));
