@@ -53,7 +53,6 @@ app.prepare().then(() => {
   server.use(bodyParser.urlencoded({ extended: true }));
   server.use(passport.initialize());
   server.use('/u', express.static('static'));
-  server.use('/base_url', server);
 
   server.use((req, res, next) => {
     req.realIp = req.headers['x-real-ip'] || req.connection.remoteAddress || '';
@@ -64,7 +63,7 @@ app.prepare().then(() => {
     const { headers, path } = req;
     if (
       headers.host !== config.DEFAULT_DOMAIN &&
-      (path === '/' || preservedUrls.some(item => item === path.replace('/', '')))
+      (path === '/u/' || preservedUrls.some(item => item === path.replace('/u/', '')))
     ) {
       return res.redirect(`http://${config.DEFAULT_DOMAIN + path}`);
     }
