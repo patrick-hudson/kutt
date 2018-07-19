@@ -34,22 +34,22 @@ class AppDocument extends Document {
             href="https://fonts.googleapis.com/css?family=Nunito:300,400,700"
             rel="stylesheet"
           />
-          <link rel="icon" sizes="196x196" href="/images/favicon-196x196.png" />
-          <link rel="icon" sizes="32x32" href="/images/favicon-32x32.png" />
-          <link rel="icon" sizes="16x16" href="/images/favicon-16x16.png" />
-          <link rel="apple-touch-icon" href="/images/favicon-196x196.png" />
-          <link rel="mask-icon" href="/images/icon.svg" color="blue" />
+          <link rel="icon" sizes="196x196" href="/u/images/favicon-196x196.png" />
+          <link rel="icon" sizes="32x32" href="/u/images/favicon-32x32.png" />
+          <link rel="icon" sizes="16x16" href="/u/images/favicon-16x16.png" />
+          <link rel="apple-touch-icon" href="/u/images/favicon-196x196.png" />
+          <link rel="mask-icon" href="/u/images/icon.svg" color="blue" />
 
           <meta property="fb:app_id" content="123456789" />
           <meta property="og:url" content="https://kutt.it" />
           <meta property="og:type" content="website" />
           <meta property="og:title" content="Kutt.it" />
-          <meta property="og:image" content="https://kutt.it/images/card.png" />
+          <meta property="og:image" content="https://kutt.it/u/images/card.png" />
           <meta property="og:description" content="Free & Open Source Modern URL Shortener" />
           <meta name="twitter:url" content="https://kutt.it" />
           <meta name="twitter:title" content="Kutt.it" />
           <meta name="twitter:description" content="Free & Open Source Modern URL Shortener" />
-          <meta name="twitter:image" content="https://kutt.it/images/card.png" />
+          <meta name="twitter:image" content="https://kutt.it/u/images/card.png" />
 
           {this.props.styleTags}
 

@@ -63,16 +63,16 @@ class TBodyCount extends Component {
       <Wrapper>
         {url.count || 0}
         <Actions>
-          {url.password && <Icon src="/images/lock.svg" lowopacity />}
+          {url.password && <Icon src="/u/images/lock.svg" lowopacity />}
           {url.count > 0 && (
             <TBodyButton withText onClick={this.goTo}>
-              <Icon src="/images/chart.svg" />
+              <Icon src="/u/images/chart.svg" />
               Stats
             </TBodyButton>
           )}
           {showQrCode && (
             <TBodyButton onClick={this.toggleQrCodeModal}>
-              <Icon src="/images/qrcode.svg" />
+              <Icon src="/u/images/qrcode.svg" />
             </TBodyButton>
           )}
           <TBodyButton
@@ -80,7 +80,7 @@ class TBodyCount extends Component {
             data-host={URL.parse(url.shortUrl).hostname}
             onClick={showModal}
           >
-            <Icon src="/images/trash.svg" />
+            <Icon src="/u/images/trash.svg" />
           </TBodyButton>
         </Actions>
         <Modal show={this.state.showQrCodeModal} close={this.toggleQrCodeModal}>

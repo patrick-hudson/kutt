@@ -81,7 +81,7 @@ const Description = styled.p`
 const FeaturesItem = ({ children, icon, title }) => (
   <Block>
     <IconBox>
-      <Icon src={`/images/${icon}.svg`} />
+      <Icon src={`/u/images/${icon}.svg`} />
     </IconBox>
     <Title>{title}</Title>
     <Description>{children}</Description>

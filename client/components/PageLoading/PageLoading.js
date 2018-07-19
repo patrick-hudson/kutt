@@ -21,7 +21,7 @@ const Icon = styled.img`
 
 const pageLoading = () => (
   <Loading>
-    <Icon src="/images/loader.svg" />
+    <Icon src="/u/images/loader.svg" />
   </Loading>
 );
 

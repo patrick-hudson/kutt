@@ -124,7 +124,7 @@ const Button = props => {
       type={props.icon}
       round={props.round}
       color={props.color}
-      src={`/images/${props.icon}.svg`}
+      src={`/u/images/${props.icon}.svg`}
     />
   ) : (
     ''

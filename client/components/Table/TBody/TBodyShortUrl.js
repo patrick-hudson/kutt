@@ -27,7 +27,7 @@ const TBodyShortUrl = ({ index, copiedIndex, handleCopy, url }) => (
     {copiedIndex === index && <CopyText>Copied to clipboard!</CopyText>}
     <CopyToClipboard onCopy={() => handleCopy(index)} text={`${url.shortUrl}`}>
       <TBodyButton>
-        <Icon src="/images/copy.svg" />
+        <Icon src="/u/images/copy.svg" />
       </TBodyButton>
     </CopyToClipboard>
     <a href={`${url.shortUrl}`}>{`${url.shortUrl.replace(/^https?:\/\//, '')}`}</a>

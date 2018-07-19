@@ -58,7 +58,7 @@ const Verify = ({ showLoading, query }) => {
   const message = query ? (
     <Wrapper>
       <MessageWrapper>
-        <Icon src="/images/check.svg" />
+        <Icon src="/u/images/check.svg" />
         <Message>Your account has been verified successfully!</Message>
       </MessageWrapper>
       <Button icon="arrow-left" onClick={goToHomepage}>
@@ -67,7 +67,7 @@ const Verify = ({ showLoading, query }) => {
     </Wrapper>
   ) : (
     <MessageWrapper>
-      <Icon src="/images/x.svg" />
+      <Icon src="/u/images/x.svg" />
       <Message>Invalid verification.</Message>
     </MessageWrapper>
   );

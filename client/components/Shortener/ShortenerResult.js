@@ -104,7 +104,7 @@ class ShortenerResult extends Component {
         </CopyToClipboard>
         {showQrCode && (
           <QRButton onClick={this.toggleQrCodeModal}>
-            <Icon src="/images/qrcode.svg" />
+            <Icon src="/u/images/qrcode.svg" />
           </QRButton>
         )}
         <Modal show={this.state.showQrCodeModal} close={this.toggleQrCodeModal}>

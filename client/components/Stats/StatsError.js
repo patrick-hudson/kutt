@@ -30,7 +30,7 @@ const Icon = styled.img`
 
 const StatsError = ({ text }) => (
   <ErrorWrapper>
-    <Icon src="/images/x.svg" />
+    <Icon src="/u/images/x.svg" />
     <ErrorMessage>{text || 'Could not get the short URL stats.'}</ErrorMessage>
   </ErrorWrapper>
 );

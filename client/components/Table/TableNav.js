@@ -50,10 +50,10 @@ const Icon = styled.img`
 const TableNav = ({ handleNav, next, prev }) => (
   <Wrapper>
     <Nav active={prev} data-active={prev} data-type="prev" onClick={handleNav}>
-      <Icon src="/images/nav-left.svg" />
+      <Icon src="/u/images/nav-left.svg" />
     </Nav>
     <Nav active={next} data-active={next} data-type="next" onClick={handleNav}>
-      <Icon src="/images/nav-right.svg" />
+      <Icon src="/u/images/nav-right.svg" />
     </Nav>
   </Wrapper>
 );

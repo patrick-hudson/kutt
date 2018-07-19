@@ -56,7 +56,7 @@ const ShortenerInput = ({ isAuthenticated, domain, handleSubmit, setShortenerFor
   <ShortenerForm id="shortenerform" onSubmit={handleSubmit}>
     <TextInput id="target" name="target" placeholder="Paste your long URL" autoFocus />
     <Submit onClick={handleSubmit}>
-      <Icon src="/images/send.svg" />
+      <Icon src="/u/images/send.svg" />
     </Submit>
     <Error type="shortener" />
     <ShortenerOptions
