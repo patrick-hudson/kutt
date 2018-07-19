@@ -71,32 +71,32 @@ app.prepare().then(() => {
   });
 
   /* View routes */
-  server.get('/u/', (req, res) => app.render(req, res, '/'));
-  server.get('/u/login', (req, res) => app.render(req, res, '/login'));
-  server.get('/u/logout', (req, res) => app.render(req, res, '/logout'));
-  server.get('/u/settings', (req, res) => app.render(req, res, '/settings'));
-  server.get('/u/stats', (req, res) => app.render(req, res, '/stats', req.query));
-  server.get('/u/terms', (req, res) => app.render(req, res, '/terms'));
-  server.get('/u/report', (req, res) => app.render(req, res, '/report'));
-  server.get('/u/reset-password/:resetPasswordToken?', catchErrors(auth.resetPassword), (req, res) =>
-    app.render(req, res, '/u/reset-password', req.user)
+  server.get('/', (req, res) => app.render(req, res, '/'));
+  server.get('/login', (req, res) => app.render(req, res, '/login'));
+  server.get('/logout', (req, res) => app.render(req, res, '/logout'));
+  server.get('/settings', (req, res) => app.render(req, res, '/settings'));
+  server.get('/stats', (req, res) => app.render(req, res, '/stats', req.query));
+  server.get('/terms', (req, res) => app.render(req, res, '/terms'));
+  server.get('/report', (req, res) => app.render(req, res, '/report'));
+  server.get('/reset-password/:resetPasswordToken?', catchErrors(auth.resetPassword), (req, res) =>
+    app.render(req, res, '/reset-password', req.user)
   );
   server.get('/verify/:verificationToken?', catchErrors(auth.verify), (req, res) =>
-    app.render(req, res, '/u/verify', req.user)
+    app.render(req, res, '/verify', req.user)
   );
 
   /* User and authentication */
-  server.post('/u/api/auth/signup', validationCriterias, validateBody, catchErrors(auth.signup));
-  server.post('/u/api/auth/login', validationCriterias, validateBody, auth.authLocal, auth.login);
-  server.post('/u/api/auth/renew', auth.authJwt, auth.renew);
-  server.post('/u/api/auth/changepassword', auth.authJwt, catchErrors(auth.changePassword));
-  server.post('/u/api/auth/generateapikey', auth.authJwt, catchErrors(auth.generateApiKey));
-  server.post('/u/api/auth/resetpassword', catchErrors(auth.requestPasswordReset));
-  server.get('/u/api/auth/usersettings', auth.authJwt, auth.userSettings);
+  server.post('/api/auth/signup', validationCriterias, validateBody, catchErrors(auth.signup));
+  server.post('/api/auth/login', validationCriterias, validateBody, auth.authLocal, auth.login);
+  server.post('/api/auth/renew', auth.authJwt, auth.renew);
+  server.post('/api/auth/changepassword', auth.authJwt, catchErrors(auth.changePassword));
+  server.post('/api/auth/generateapikey', auth.authJwt, catchErrors(auth.generateApiKey));
+  server.post('/api/auth/resetpassword', catchErrors(auth.requestPasswordReset));
+  server.get('/api/auth/usersettings', auth.authJwt, auth.userSettings);
 
   /* URL shortener */
   server.post(
-    '/u/api/url/submit',
+    '/api/url/submit',
     auth.authApikey,
     auth.authJwtLoose,
     catchErrors(auth.recaptcha),
@@ -105,19 +105,19 @@ app.prepare().then(() => {
     catchErrors(malwareCheck),
     catchErrors(url.urlShortener)
   );
-  server.post('/u/api/url/deleteurl', auth.authApikey, auth.authJwt, catchErrors(url.deleteUrl));
-  server.get('/u/api/url/geturls', auth.authApikey, auth.authJwt, catchErrors(url.getUrls));
-  server.post('/u/api/url/customdomain', auth.authJwt, catchErrors(url.setCustomDomain));
-  server.delete('/u/api/url/customdomain', auth.authJwt, catchErrors(url.deleteCustomDomain));
-  server.get('/u/api/url/stats', auth.authApikey, auth.authJwt, catchErrors(url.getStats));
-  server.post('/u/api/url/requesturl', catchErrors(url.goToUrl));
-  server.get('/u/:id', catchErrors(url.goToUrl), (req, res) => {
+  server.post('/api/url/deleteurl', auth.authApikey, auth.authJwt, catchErrors(url.deleteUrl));
+  server.get('/api/url/geturls', auth.authApikey, auth.authJwt, catchErrors(url.getUrls));
+  server.post('/api/url/customdomain', auth.authJwt, catchErrors(url.setCustomDomain));
+  server.delete('/api/url/customdomain', auth.authJwt, catchErrors(url.deleteCustomDomain));
+  server.get('/api/url/stats', auth.authApikey, auth.authJwt, catchErrors(url.getStats));
+  server.post('/api/url/requesturl', catchErrors(url.goToUrl));
+  server.get('/:id', catchErrors(url.goToUrl), (req, res) => {
     switch (req.pageType) {
       case 'password':
-        return app.render(req, res, '/u/url-password', req.protectedUrl);
+        return app.render(req, res, '/url-password', req.protectedUrl);
       case 'info':
       default:
-        return app.render(req, res, '/u/url-info', req.urlTarget);
+        return app.render(req, res, '/url-info', req.urlTarget);
     }
   });
 
