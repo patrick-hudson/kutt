@@ -23,6 +23,7 @@ const HeaderLeftMenu = props => {
   const goTo = e => {
     e.preventDefault();
     const path = e.currentTarget.getAttribute('href');
+    console.log(path);
     if (!path || window.location.pathname === path) return;
     props.showPageLoading();
     Router.push(path);
