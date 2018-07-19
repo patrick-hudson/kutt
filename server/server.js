@@ -53,6 +53,7 @@ app.prepare().then(() => {
   server.use(bodyParser.urlencoded({ extended: true }));
   server.use(passport.initialize());
   server.use('/u', express.static('static'));
+  server.use('/base_url', server);
 
   server.use((req, res, next) => {
     req.realIp = req.headers['x-real-ip'] || req.connection.remoteAddress || '';

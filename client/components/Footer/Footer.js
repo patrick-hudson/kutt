@@ -52,11 +52,11 @@ class Footer extends Component {
             GitHub
           </a>
           {' | '}
-          <a href="/terms" title="Terms of Service" target="_blank">
+          <a href="/u/terms" title="Terms of Service" target="_blank">
             Terms of Service
           </a>
           {' | '}
-          <a href="/report" title="Report abuse" target="_blank">
+          <a href="/u/report" title="Report abuse" target="_blank">
             Report Abuse
           </a>.
         </Text>

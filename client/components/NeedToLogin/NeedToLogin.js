@@ -76,8 +76,8 @@ const NeedToLogin = () => (
       <Title>
         Manage links, set custom <b>domains</b> and view <b>stats</b>.
       </Title>
-      <Link href="/login" prefetch>
-        <a href="/login" title="login / signup">
+      <Link href="/u/login" prefetch>
+        <a href="/u/login" title="login / signup">
           <Button>Login / Sign up</Button>
         </a>
       </Link>

@@ -116,7 +116,7 @@ class Login extends Component {
             <TextInput type="email" name="email" id="email" autoFocus />
             <LoginInputLabel htmlFor="password">Password (min chars: 8)</LoginInputLabel>
             <TextInput type="password" name="password" id="password" />
-            <ForgetPassLink href="/reset-password" title="Forget password" onClick={this.goTo}>
+            <ForgetPassLink href="/u/reset-password" title="Forget password" onClick={this.goTo}>
               Forgot your password?
             </ForgetPassLink>
             <ButtonWrapper>

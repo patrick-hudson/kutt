@@ -29,21 +29,21 @@ const HeaderMenu = props => {
 
   const login = !props.auth.isAuthenticated && (
     <HeaderMenuItem>
-      <a href="/login" title="login / signup" onClick={goTo}>
+      <a href="/u/login" title="login / signup" onClick={goTo}>
         <Button>Login / Sign up</Button>
       </a>
     </HeaderMenuItem>
   );
   const logout = props.auth.isAuthenticated && (
     <HeaderMenuItem>
-      <a href="/logout" title="logout" onClick={goTo}>
+      <a href="/u/logout" title="logout" onClick={goTo}>
         Logout
       </a>
     </HeaderMenuItem>
   );
   const settings = props.auth.isAuthenticated && (
     <HeaderMenuItem>
-      <a href="/settings" title="settings" onClick={goTo}>
+      <a href="/u/settings" title="settings" onClick={goTo}>
         <Button>Settings</Button>
       </a>
     </HeaderMenuItem>

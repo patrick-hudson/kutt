@@ -40,7 +40,7 @@ const HeaderLeftMenu = props => {
         </a>
       </HeaderMenuItem>
       <HeaderMenuItem>
-        <a href="/report" title="Report abuse" onClick={goTo}>
+        <a href="/u/report" title="Report abuse" onClick={goTo}>
           Report
         </a>
       </HeaderMenuItem>
